@@ -8,18 +8,18 @@ import { Security } from 'src/app/utils/security.util';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
   public user!: any;
-  
+
   constructor(private router: Router) {
- 
-    
+
+
   }
-  ngOnInit(){
+  ngOnInit() {
     this.user = Security.getUser();
   }
-  logout(){
+  logout() {
     Security.clear();
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 }
